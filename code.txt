@@ -1,0 +1,12 @@
+
+
+  const elementToDisplay = filter ? filteredData : data;
+   =
+    function elementToDisplay(element) { // function pour afficher l'élément que l'on fitre
+        if (element) { // si élement
+            return filteredData // retourne l'élément filtrer
+        } else {
+            return data
+        }
+    }
+    const displayResult = elementToDisplay(filter);

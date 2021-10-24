@@ -1,0 +1,8 @@
+// faire un premier tri en fonction de england ireland scotland et united-states par des inputs radios puis la barre de recherche
+// Constat : efface, mais sélectionne bien
+
+// axios : Axios est basé sur Promise, ce qui vous permet de profiter des avantages d’async de JavaScript et await pour un code asynchrone plus lisible.
+
+
+
+Notre dernière tâche consiste à implémenter la fonctionnalité de recherche / filtrage sur cette liste de données.
