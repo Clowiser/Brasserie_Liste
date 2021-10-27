@@ -1,0 +1,130 @@
+/* BODY */
+/* FONT */
+@font-face {
+    font-family: "aristotelica";
+    src: url(./fonts/Artistotelica/Aristotelica-Display-DemiBold-Trial.ttf) format("truetype");
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'aristotelica', 'Segoe UI', 'Roboto', 'Oxygen', serif, 'sans-serif';
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* HOME */
+.accueil{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #32325b;
+}
+
+.titrelogo{
+    margin: 2% 0 2% 0;
+}
+
+/* BREWERIES LIST */
+/* IMAGES */
+#imgRadios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+}
+
+#us{
+    padding-left: 1%;
+    padding-right: 1.5%;
+}
+
+.pays{
+    width: 3%;
+}
+
+img {
+    width: 25%;
+    margin: auto;
+}
+
+#space{
+    margin-bottom: 3%;
+}
+
+#spacehr{
+    margin-bottom: 2%;
+}
+
+.logoBreweries{
+    width: 3%;
+}
+
+/* RECHERCHE - BOUTONS */
+#search{
+    margin-top: 3%;
+}
+
+#searchbarre{
+    width: 50%;
+    height: 30px;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+#buttonclear, #buttonsearch{
+    width: 5%;
+    height: 35px;
+    border-radius: 10px;
+    font-family: "Segoe UI", serif;
+    font-size: 15px;
+    border: 1px solid #fff;
+    margin-left: 0.5%;
+    cursor: pointer;
+    text-align: center;
+}
+
+#buttonsearch:hover, #buttonclear:hover {
+   font-weight: bold;
+}
+
+.inputradio{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    padding: 0;
+    font-size: 20px;
+}
+
+#imginput{
+    margin:auto;
+    width: 90%;
+}
+
+
+/* SCROLL */
+#scroll{
+    height:400pt;
+    overflow:auto;
+    font-family: "Segoe UI", serif;
+}
+
+#scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+#scroll::-webkit-scrollbar-track {
+    background: whitesmoke;
+}
+
+#scroll::-webkit-scrollbar-thumb {
+    background-color: #32325b;
+    border-radius: 20px;
+    border: 1px double #cccccc;
+}
+
+/* AFFICHER ET MASQUER LES INFORMATIONS */
+.hide{
+    display: none;
+}

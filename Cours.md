@@ -1,6 +1,7 @@
 # Projet
 
 ## Bibliothèque axios : 
+- axios, un client HTTP basé sur les Promesses.
 - permettre d'utiliser un fetch
 - rapide et performant
 
