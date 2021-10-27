@@ -25,5 +25,4 @@ const Brewery = (props) => {
     );
 };
 
-export default Brewery
-;
+export default Brewery;

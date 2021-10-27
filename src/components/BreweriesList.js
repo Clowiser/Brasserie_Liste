@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import Brewery from "./Brewery";
-
+// import Brewery from "./Brewery"; // Composant Bewery manquant : afficher les informations complémentaires (comme l'adresse postale, le site web ou le numéro de téléphone) de chaque brasserie
 import angleterre from "../assets/img/angleterre.png";
 import ecosse from "../assets/img/ecosse.png";
 import etatsunis from "../assets/img/etatsunis.png";
@@ -14,13 +13,13 @@ const BreweriesList = () => {
     const [data, setData] = useState([]);
     const [filtered, setFiltered] = useState(data);
 
-    // API ERREUR CHARGEMENT
+    // API, ERREUR ET CHARGEMENT
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false)
 
     // INPUT RADIO
-    const [choseCountry, setChoseCountry] = useState(''); // variable pour choisir en fonction des pays qui vont être relié au inputs radios
-    const radios = ['England', 'Ireland', 'Scotland', 'United States']; // variable pour les inputs radio en tableau
+    const [choseCountry, setChoseCountry] = useState('');
+    const radios = ['England', 'Ireland', 'Scotland', 'United States'];
 
 
     // BOUTON RECHERCHE
@@ -43,7 +42,7 @@ const BreweriesList = () => {
         })
     }
 
-    // HIDE
+    // AFFICHER ET MASQUER LA FENETRE DE BEWERY - Composant Bewery manquant
     // function affiche() {
     //     document.getElementById("hide").style.display = "block";
     // }
@@ -56,8 +55,8 @@ const BreweriesList = () => {
     // DONNEES
     useEffect(() => {
         setLoading(true)
-        axios.get('https://raw.githubusercontent.com/Clowiser/openbrewerydb/master/breweries.json')
-        // axios('https://api.openbrewerydb.org/breweries')
+        axios.get('https://raw.githubusercontent.com/openbrewerydb/openbrewerydb/master/breweries.json')
+        // axios('https://api.openbrewerydb.org/breweries') // Echantillon de 20 brasseries
             .then(res => {
                 setData(res.data)
                 setFiltered(res.data);
@@ -69,10 +68,11 @@ const BreweriesList = () => {
             })
     }, []);
 
+    // CONDITION ET MESSAGE ERREUR ET CHARGEMENT
     if (error) return `We are sorry, we can't load information for the moment, try again later!`;
     if (loading) return `Loading, please wait...`;
 
-    // POUR TOUT AU-DESSUS, TU ME RETOURNE
+    // RETOURNE LES IMAGES, LES INPUTS RADIOS, LA PARTIE RECHERCHE ET CLEAR
     return (
         <div>
             <div id="imgRadios">
@@ -83,10 +83,10 @@ const BreweriesList = () => {
             </div>
             {/* INPUT RADIO */}
                 <ul className="inputradio">
-                    {radios.map((radio => { //  la fonction callback fournie en argument est exécutée une fois pour chacun des éléments du tableau radios, dans l'ordre du tableau Angleterre, etc.
+                    {radios.map((radio => {
                             return (
                                 <li key={radio}>
-                                    <input type="radio" value={radio} id="radio" name="radiofalse"
+                                    <input type="radio" value={radio} id="radio" name="radio"
                                            checked={radio === choseCountry}
                                            onChange={event => setChoseCountry(event.target.value)}/>
                                     <label htmlFor={radio}>{radio}</label>
@@ -96,20 +96,18 @@ const BreweriesList = () => {
                     ))}
                 </ul>
 
-            {/* RECHERCHE AVEC BOUTONS */}
+            {/* BARRE DE RECHERCHE ET BOUTONS SEARCH ET CLEAR */}
             <div id="search">
-                <input type="text" placeholder="   Write the name of city in lowercase" id="searchbarre"/>
+                <input type="text" placeholder="Write the name of city in lowercase" id="searchbarre"/>
                 <button type="submit" className="search" onClick={blockSearch} id="buttonsearch">Search</button>
                 <button type="reset" className="clear" onClick={blockClear} id="buttonclear">Clear</button>
             </div>
 
-
-            {/* BARRE SEPARATRICE */}
-            <hr id="spacehr"/>
+            {/* BARRE SEPARATRICE PAR LA BALISE HR */}
+            <hr/>
             <h1>Beweries List :</h1>
 
             {/* AFFICHAGE */}
-
             <div id="scroll">
             {filtered
                 .filter((element) =>element.country.includes(choseCountry))
@@ -120,9 +118,9 @@ const BreweriesList = () => {
                                    <img src={beerr} alt="logoBreweries" className="logoBreweries"/><h3>{element.name}</h3>
                                     <h4>{element.country}</h4>
                                     <p>{element.city} - {element.state}</p>
-                                {/*<Factory />*/}
+                                {/* AFFICHER ET MASQUER LA FENETRE DE BEWERY - Composant Bewery manquant */}
                                 {/*<button onClick={affiche} id="test">Afficher</button>*/}
-                                {/*    <div id="hide"> <Factory /> </div>*/}
+                                {/* <div id="hide"> <Factory /> </div>*/}
                                 <br/>
                             </div>)
                     }
@@ -132,7 +130,9 @@ const BreweriesList = () => {
                                 <img src={beerr} alt="logoBreweries" className="logoBreweries"/><h3>{element.name}</h3>
                                 <h4>{element.country}</h4>
                                 <p>{element.city}</p>
-                                {/*<Factory className="hide"/>*/}
+                                {/* AFFICHER ET MASQUER LA FENETRE DE BEWERY - Composant Bewery manquant */}
+                                {/*<button onClick={affiche} id="test">Afficher</button>*/}
+                                {/* <div id="hide"> <Factory /> </div>*/}
                                 <br/>
                             </div>)
                     }
