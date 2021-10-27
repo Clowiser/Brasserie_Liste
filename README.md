@@ -10,7 +10,7 @@ Consignes - prototyper le projet :
     - Être créatif et ajouter des fonctionnalités supplémentaires qu'un utilisateur pourrait trouver utiles,
     - S'inspirer, mais ne pas CTRL+C/CTRL+V,
     - Interface aussi raffinée que possible,
-    - Front-end sur une application d'une seule page avec un unique 'index.html' comportant des liens vers des JS/CSS/etc externes.
+    - Idéalement, le front-end sur une application d'une seule page avec un unique 'index.html' comportant des liens vers des JS/CSS/etc externes.
 
 ## Compte-rendu :
 
@@ -37,16 +37,16 @@ Consignes - prototyper le projet :
 - Difficultés d'assimilation de certaines informations,
   - Solution : beaucoup de recherches,
 - Difficultés de construction du code,
-- Solution : beaucoup de recherches,
+  - Solution : beaucoup de recherches,
 
 - Après des tentatives, je n'ai pas réussi à centrer les images des drapeaux des pays par rapport aux noms des pays.
     - Je pense que cela est dû au fait que les tailles des noms des pays sont tous différents, empêchant le centrage précis.
       Cependant, j'imagine qu'il existe bien un moyen, mais je ne l'ai pas trouvé.
 
 - Un temps de chargement assez long, comparé à la rapidité de réponse que l'on a aujourd'hui. 
-  - Exemple : lors du clique sur le bouton "clear"
+  - Exemple : lors du clic sur le bouton "clear"
 
-### Vulnérabilité :
+### Vulnérabilités :
 
 - Vulnérabilité XSS : permet à l'attaquant d'injecter des scripts, exécutés côté-client, au travers du site web pour viser le navigateur web.
 
